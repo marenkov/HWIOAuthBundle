@@ -37,6 +37,7 @@ class Configuration implements ConfigurationInterface
             'stack_exchange',
             'vkontakte',
             'windows_live',
+            'odnoklasniki',
 
         'oauth1',
             'linkedin',
@@ -140,6 +141,9 @@ class Configuration implements ConfigurationInterface
                         ->scalarNode('client_secret')
                             ->cannotBeEmpty()
                         ->end()
+                        ->scalarNode('client_public')
+                            ->cannotBeEmpty()
+                        ->end()                                        
                         ->scalarNode('infos_url')
                             ->validate()
                                 ->ifTrue(function($v) {
